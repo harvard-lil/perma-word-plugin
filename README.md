@@ -15,7 +15,7 @@ The Perma Word Plugin allows Perma.cc users to insert Perma Links directly from 
 Believed working:
 
 - Mac Word 2011
-- Windows Word 2000
+- Windows Word 2010
 
 Known not working:
 
