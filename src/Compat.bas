@@ -1,12 +1,13 @@
 Attribute VB_Name = "Compat"
 Option Explicit
 
-#If Not Mac Then
+#If Mac Then
+#ElseIf VBA7 Then
+    Private Declare PtrSafe Sub Sleep Lib "kernel32" (ByVal lngMilliSeconds As Long)
+    Private Declare PtrSafe Function apiCopyFile Lib "kernel32" Alias "CopyFileA" (ByVal lpExistingFileName As String, ByVal lpNewFileName As String, ByVal bFailIfExists As Long) As Long
+#Else
     Private Declare Sub Sleep Lib "kernel32" (ByVal lngMilliSeconds As Long)
-    Private Declare Function apiCopyFile Lib "kernel32" Alias "CopyFileA" _
-          (ByVal lpExistingFileName As String, _
-          ByVal lpNewFileName As String, _
-          ByVal bFailIfExists As Long) As Long
+    Private Declare Function apiCopyFile Lib "kernel32" Alias "CopyFileA" (ByVal lpExistingFileName As String, ByVal lpNewFileName As String, ByVal bFailIfExists As Long) As Long
 #End If
 
 
