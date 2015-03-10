@@ -33,9 +33,9 @@ Sub InstallPlugin()
     MsgBox "The Perma plugin is installed! Please restart Word and right-click on a link to get started."
 Exit Sub
 HandleFileError:
-    MsgBox "Sorry, we don't have permission to copy files to your Startup folder. Please manually copy this plugin to" & vbCrLf & vbCrLf & _
+    MsgBox "Sorry, we don't have permission to copy files to your Startup folder. Please copy this plugin to" & vbCrLf & vbCrLf & _
         Application.StartupPath & vbCrLf & vbCrLf & _
-        "and restart Word."
+        "and restart Word.", vbExclamation
 End Sub
 
 Sub DebugShowContextBarNames()

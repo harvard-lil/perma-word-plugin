@@ -95,10 +95,10 @@ Sub ImportModules()
         ImportModule project, GetDocumentDir() & Application.PathSeparator & "lib", CStr(fileName)
     Next fileName
     
-    ' TODO: Can't seem to rename module from itself.
-    Dim buildComponent As VBComponent
-    Set buildComponent = GetComponentByFileName(project, "Build1")
-    buildComponent.Name = "Build"
+    ' TODO: This fails for some reason.
+    'Dim buildComponent As VBComponent
+    'Set buildComponent = GetComponentByFileName(project, "Build1")
+    'buildComponent.Name = "Build"
     
     MsgBox "Done. Please rename the 'Build1' Module to 'Build'."
 End Sub
@@ -140,7 +140,11 @@ End Sub
 Function ExportModule(project As VBProject, path As String, fileName As String)
     Dim VBComp As VBComponent
     Set VBComp = GetComponentByFileName(project, fileName)
-    VBComp.Export path & Application.PathSeparator & fileName
+    If VBComp Is Nothing Then
+        MsgBox "Warning: Can't export component " & fileName & ". Component not found."
+    Else
+        VBComp.Export path & Application.PathSeparator & fileName
+    End If
 End Function
 
 

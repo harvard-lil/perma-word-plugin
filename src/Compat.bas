@@ -12,10 +12,14 @@ Option Explicit
 
 Public Function CompatCopyFile(source As String, dest As String)
     ' copy-file function capable of copying open files
-    Dim result As String
     #If Mac Then
         'MacScript ("tell application ""Finder"" to copy file """ & source & """ to folder """ & dest & """")
-        WebHelpers.ExecuteInShell ("cp " & WebHelpers.PrepareTextForShell(GetPOSIXPath(source)) & " " & WebHelpers.PrepareTextForShell(GetPOSIXPath(dest)))
+        Dim result As ShellResult
+        result = WebHelpers.ExecuteInShell("cp " & WebHelpers.PrepareTextForShell(GetPOSIXPath(source)) & " " & WebHelpers.PrepareTextForShell(GetPOSIXPath(dest)))
+        If result.ExitCode <> 0 Then
+            err.Raise result.ExitCode, "CopyFile", result.Output
+        End If
+        
     #Else
         Dim ExitCode As Long
         ExitCode = apiCopyFile(source, dest, False)
