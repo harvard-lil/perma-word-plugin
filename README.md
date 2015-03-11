@@ -6,18 +6,19 @@ The Perma Word Plugin allows Perma.cc users to insert Perma Links directly from 
 ## Installation
 
 1. Download the "Perma Word Plugin.dotm" file from the Releases tab.
-1. Open the file in Microsoft Word.
-1. Enable macros.
-1. Double-click to install.
+2. Open the file in Microsoft Word.
+3. Enable macros.
+4. Double-click to install.
 
 ## Compatibility
 
-Believed working:
+Working:
 
-- Mac Word 2011
+- Windows Word 2013
 - Windows Word 2010
+- Mac Word 2011
 
-Known not working:
+Not working:
 
 - Mac Word 2008 (no macro support)
 
@@ -26,14 +27,14 @@ Other versions are not yet tested -- let us know if you try.
 ## Building From Source
 
 1. Clone this repository.
-1. Open "Perma Word Plugin Base.docx" in Word.
-1. Using "Save As", save a copy in the same directory as "Perma Word Plugin.dotm", using the "Word Macro-enabled Document (.dotm)" format.
-1. Open the Visual Basic Editor from Word.
-1. Import the "src/Build.bas" file into the "Perma Word Plugin.dotm" project.
-1. Open Tools > References and enable "Microsoft Visual Basic for Application Extensibility 5.3".
-1. Run the macro "ImportModules".
-1. Rename the "Build1" module to "Build".
-1. Save and close the template.
+2. Open "Perma Word Plugin Base.docx" in Word.
+3. Using "Save As", save a copy in the same directory as "Perma Word Plugin.dotm", using the "Word Macro-enabled Document (.dotm)" format.
+4. Open the Visual Basic Editor from Word.
+5. Import the "src/Build.bas" file into the "Perma Word Plugin.dotm" project.
+6. Open Tools > References and enable "Microsoft Visual Basic for Application Extensibility 5.3".
+7. Run the macro "ImportModules".
+8. Rename the "Build1" module to "Build".
+9. Save and close the template.
 
 ## Contributing
 
