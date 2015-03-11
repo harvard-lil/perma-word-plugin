@@ -2,9 +2,9 @@ VERSION 5.00
 Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} SettingsForm 
    Caption         =   "Perma Settings"
    ClientHeight    =   5500
-   ClientLeft      =   -2320
-   ClientTop       =   -20240
-   ClientWidth     =   6900
+   ClientLeft      =   -2240
+   ClientTop       =   -21620
+   ClientWidth     =   8900.001
    OleObjectBlob   =   "SettingsForm.frx":0000
    StartUpPosition =   1  'CenterOwner
 End
@@ -22,7 +22,6 @@ Option Explicit
 Private Sub Cancel_Click()
     Unload Me
 End Sub
-
 
 Private Sub Save_Click()
     On Error GoTo HandleError
@@ -47,6 +46,7 @@ Private Sub UninstallButton_Click()
     
     Unload Me
     DeleteFromMenu
+    MySaveSetting "APIKey", ""
     
     Dim target As addin
     For Each target In Application.AddIns

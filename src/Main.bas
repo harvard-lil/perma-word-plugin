@@ -1,10 +1,6 @@
 Attribute VB_Name = "Main"
 Option Explicit
 
-' TODO:
-' - use Sugoe WP as display font on Windows
-
-
 Private Const VERSION = "0.0.2"
 Private Const InstalledPluginName = "Perma Word Plugin.dotm"
 

@@ -2,7 +2,7 @@ VERSION 5.00
 Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} StatusForm 
    Caption         =   "Creating Perma Archive"
    ClientHeight    =   3000
-   ClientLeft      =   -560
+   ClientLeft      =   -480
    ClientTop       =   -10580
    ClientWidth     =   7060
    OleObjectBlob   =   "StatusForm.frx":0000
