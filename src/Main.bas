@@ -1,7 +1,7 @@
 Attribute VB_Name = "Main"
 Option Explicit
 
-Private Const VERSION = "0.0.2"
+Private Const VERSION = "0.0.3"
 Private Const InstalledPluginName = "Perma Word Plugin.dotm"
 
 Dim EventHandlers As New EventHandlerClass
