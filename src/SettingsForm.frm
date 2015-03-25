@@ -2,7 +2,7 @@ VERSION 5.00
 Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} SettingsForm 
    Caption         =   "Perma Settings"
    ClientHeight    =   5500
-   ClientLeft      =   -2240
+   ClientLeft      =   -2320
    ClientTop       =   -21620
    ClientWidth     =   8900.001
    OleObjectBlob   =   "SettingsForm.frx":0000

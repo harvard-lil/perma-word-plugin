@@ -179,7 +179,7 @@ Sub InsertPermaLink()
     Dim Client As New WebClient
     Dim Resource As String
     Dim Response As WebResponse
-    Client.BaseUrl = "https://dashboard.perma.cc/api/v1/"
+    Client.BaseUrl = "https://dashboard.perma.cc/api/v1a/"
     Resource = "archives/?" & _
         "api_key=" & APIKey
     Dim Body As New Dictionary
