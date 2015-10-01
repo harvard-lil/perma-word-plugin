@@ -3,7 +3,7 @@ Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} SettingsForm
    Caption         =   "Perma Settings"
    ClientHeight    =   5500
    ClientLeft      =   -2320
-   ClientTop       =   -21620
+   ClientTop       =   -22540
    ClientWidth     =   8900.001
    OleObjectBlob   =   "SettingsForm.frx":0000
    StartUpPosition =   1  'CenterOwner
@@ -13,6 +13,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
 
 
 

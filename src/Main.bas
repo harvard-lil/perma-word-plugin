@@ -1,7 +1,7 @@
 Attribute VB_Name = "Main"
 Option Explicit
 
-Private Const VERSION = "0.0.3"
+Private Const VERSION = "0.0.4"
 Private Const InstalledPluginName = "Perma Word Plugin.dotm"
 
 Dim EventHandlers As New EventHandlerClass
@@ -179,7 +179,7 @@ Sub InsertPermaLink()
     Dim Client As New WebClient
     Dim Resource As String
     Dim Response As WebResponse
-    Client.BaseUrl = "https://dashboard.perma.cc/api/v1a/"
+    Client.BaseUrl = "https://perma.cc/api/v1a/"
     Resource = "archives/?" & _
         "api_key=" & APIKey
     Dim Body As New Dictionary
@@ -223,13 +223,24 @@ Sub InsertPermaLink()
                 "api_key=" & APIKey
             Set Response = Client.GetJson(StatusResource)
             
-            Dim assets As Dictionary
-            Set assets = Response.Data("assets")(1)
-            If assets("image_capture") <> "pending" Then
-                If assets("image_capture") = "failed" And (assets("pdf_capture") = "failed" Or assets("warc_capture") = "failed") Then
+            Dim capture As Dictionary
+            Dim capturesPending As Boolean, capturesSucceeded As Boolean
+            capturesPending = False
+            capturesSucceeded = False
+            For Each capture In Response.Data("captures")
+                If capture("role") <> "favicon" Then
+                    If capture("status") = "pending" Then
+                        capturesPending = True
+                    End If
+                    If capture("status") = "success" Then
+                        capturesSucceeded = True
+                    End If
+                End If
+            Next
+            If Not capturesPending Then
+                If Not capturesSucceeded Then
                     failed = True
                 End If
-                
                 Exit Do
             End If
             
@@ -326,3 +337,5 @@ Function SafeEndUndoRecord()
     #End If
 End Function
     
+
+

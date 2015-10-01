@@ -21,6 +21,7 @@ Working:
 Not working:
 
 - Mac Word 2008 (no macro support)
+- Mac Word 2016 (macro fails to modify context menu)
 
 Other versions are not yet tested -- let us know if you try.
 

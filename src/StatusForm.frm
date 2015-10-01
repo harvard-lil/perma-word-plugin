@@ -3,7 +3,7 @@ Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} StatusForm
    Caption         =   "Creating Perma Archive"
    ClientHeight    =   3000
    ClientLeft      =   -560
-   ClientTop       =   -10580
+   ClientTop       =   -11500
    ClientWidth     =   7060
    OleObjectBlob   =   "StatusForm.frx":0000
    StartUpPosition =   1  'CenterOwner
@@ -13,6 +13,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
 
 
 
